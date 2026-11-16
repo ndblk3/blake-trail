@@ -1,0 +1,63 @@
+{
+  "name": "blake-compliance-log",
+  "version": "0.1.0",
+  "description": "Durable decision→outcome compliance trail for autonomous agents. Companion to blake-policy-agent and blake-space-access. Part of blake-guard.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "blake-compliance-log": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "INTEGRATING.md",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "test": "npm run build && node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "Apache-2.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndblk3/blake-compliance-log.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndblk3/blake-compliance-log/issues"
+  },
+  "homepage": "https://bl4k3.com/guard",
+  "keywords": [
+    "agents",
+    "compliance",
+    "audit",
+    "blake",
+    "blake-guard",
+    "policy",
+    "trail"
+  ],
+  "author": "Blake / bl4k3.com",
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.0"
+  }
+}
