@@ -11,7 +11,7 @@ import {
   verifyTrail,
 } from "../dist/index.js";
 
-describe("blake-compliance-log", () => {
+describe("blake-trail", () => {
   it("memory trail keeps newest first", async () => {
     const log = createMemoryComplianceLog();
     await recordDecision(log, {

@@ -4,14 +4,14 @@ import { recordDecision, recordOutcome } from "./record.js";
 import { formatTrailLine, verifyTrail } from "./verify.js";
 
 function usage(): never {
-  console.error(`blake-compliance-log — durable decision→outcome trail
+  console.error(`blake-trail — durable decision→outcome trail
 
 Usage:
-  blake-compliance-log recent --dir <root> [--limit N]
-  blake-compliance-log verify --dir <root> [--limit N] [--require-outcomes]
-  blake-compliance-log decision --dir <root> --owner <id> --agent <id> --env <env> \\
+  blake-trail recent --dir <root> [--limit N]
+  blake-trail verify --dir <root> [--limit N] [--require-outcomes]
+  blake-trail decision --dir <root> --owner <id> --agent <id> --env <env> \\
       --intent <type> --fp <fingerprint> --policy <hash> --effect <allow|deny|require_approval>
-  blake-compliance-log outcome --dir <root> --owner <id> --agent <id> --env <env> \\
+  blake-trail outcome --dir <root> --owner <id> --agent <id> --env <env> \\
       --intent <type> --fp <fingerprint> --policy <hash> --expected <effect> --occurred <0|1>
 `);
   process.exit(1);

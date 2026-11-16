@@ -1,14 +1,14 @@
-# Integrating blake-compliance-log
+# Integrating blake-trail
 
 ## Host loop
 
 ```ts
-import { evaluateIntent, evaluatePostAction } from "blake-policy-agent";
+import { evaluateIntent, evaluatePostAction } from "blake-gate";
 import {
   createFsComplianceLog,
   recordDecision,
   recordOutcome,
-} from "blake-compliance-log";
+} from "blake-trail";
 
 const trail = createFsComplianceLog(spaceRoot);
 const decision = evaluateIntent(intent, policy, ctx);

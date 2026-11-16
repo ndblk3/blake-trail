@@ -1,7 +1,7 @@
 {
-  "name": "blake-compliance-log",
+  "name": "blake-trail",
   "version": "0.1.0",
-  "description": "Durable decision→outcome compliance trail for autonomous agents. Companion to blake-policy-agent and blake-space-access. Part of blake-guard.",
+  "description": "Durable decision→outcome compliance trail for autonomous agents. Companion to blake-gate and blake-witness. Part of blake-guard.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,7 +13,7 @@
     }
   },
   "bin": {
-    "blake-compliance-log": "dist/cli.js"
+    "blake-trail": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -39,12 +39,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ndblk3/blake-compliance-log.git"
+    "url": "git+https://github.com/ndblk3/blake-trail.git"
   },
   "bugs": {
-    "url": "https://github.com/ndblk3/blake-compliance-log/issues"
+    "url": "https://github.com/ndblk3/blake-trail/issues"
   },
-  "homepage": "https://bl4k3.com/guard",
+  "homepage": "https://bl4k3.com/trail",
   "keywords": [
     "agents",
     "compliance",

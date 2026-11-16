@@ -1,21 +1,21 @@
-# blake-compliance-log
+# blake-trail
 
 Durable **decision → outcome** compliance trail for autonomous agents.
 
 Part of **blake-guard**:
 
-1. **`blake-policy-agent`** — gate intents (allow / deny / require_approval)  
-2. **`blake-space-access`** — witness filesystem contact with a personal space  
-3. **`blake-compliance-log`** — append-only trail of gate decisions and post-action facts  
+1. **`blake-gate`** — gate intents (allow / deny / require_approval)  
+2. **`blake-witness`** — witness filesystem contact with a personal space  
+3. **`blake-trail`** — append-only trail of gate decisions and post-action facts  
 
 Closes the prompt-vs-fact gap: if the gate said deny but the merge/send/spawn still happened, the trail records a **violation**.
 
-**Docs (Blake):** [bl4k3.com/guard](https://bl4k3.com/guard) · **License:** Apache-2.0 · **Node ≥ 20**
+**Docs (Blake):** [bl4k3.com/trail](https://bl4k3.com/trail) · **Suite:** [blake-guard](https://bl4k3.com/guard) · **License:** Apache-2.0 · **Node ≥ 20**
 
 ## Install
 
 ```bash
-npm install blake-compliance-log
+npm install blake-trail
 ```
 
 ## Quick start
@@ -26,7 +26,7 @@ import {
   recordDecision,
   recordOutcome,
   verifyTrail,
-} from "blake-compliance-log";
+} from "blake-trail";
 
 const log = createFsComplianceLog("/var/spaces/andy");
 
@@ -59,10 +59,10 @@ console.log(await verifyTrail(log));
 ## CLI
 
 ```bash
-npx blake-compliance-log recent --dir ./data/agents/andy --limit 20
-npx blake-compliance-log verify --dir ./data/agents/andy
+npx blake-trail recent --dir ./data/agents/andy --limit 20
+npx blake-trail verify --dir ./data/agents/andy
 ```
 
-## With blake-policy-agent
+## With blake-gate
 
 After `evaluateIntent` / `evaluatePostAction`, append the same fingerprint and policyHash into this trail. The packages stay independent — no hard dependency.
